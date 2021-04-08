@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,11 @@ Route::get('post/create', function(){
 Route::post('post/create',[PostController::class, 'store'])->name('add-post');
 
 Route::get('post/{id}',[PostController::class, 'get_post']);
+
+Route::get('/add-student', [StudentController::class, 'addStudent']);
+
+Route::post('/add-student',[StudentController::class, 'storeStudent'])->name('student.store');
+
+Route::get('/all-student', [StudentController::class, 'students']);
+
+Route::get('/send-email',[MailController::class, 'sendEmail']);
