@@ -9,6 +9,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\MailController;
 
+
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PortfolioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +58,8 @@ Route::post('/add-student',[StudentController::class, 'storeStudent'])->name('st
 Route::get('/all-student', [StudentController::class, 'students']);
 
 Route::get('/send-email',[MailController::class, 'sendEmail']);
+
+
+Route::get("{locale}/service",[ServiceController::class, "service"]);
+Route::get("{locale}/portfolio",[PortfolioController::class, "portfolio"]);
+
